@@ -20,5 +20,5 @@ class Student(models.Model):
     last_name        = models.CharField(max_length=20)
     email            = models.EmailField(unique=True)
     is_active        = models.BooleanField(default=True)
-    Enrolled_course  = models.ForeignKey(Course,on_delete=models.SET_NULL)
-    trainer          = models.ForeignKey(Trainer,on_delete=models.SET_NULL,related_name="students")
+    Enrolled_course  = models.ForeignKey(Course,on_delete=models.SET_NULL,null=True)
+    trainer          = models.ForeignKey(Trainer,on_delete=models.SET_NULL,null=True,related_name="students")
