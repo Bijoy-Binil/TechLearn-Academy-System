@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
-</head>
-<body>
-    
-</body>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+  </head>
+  <body>
+    <div class="container">
+      <ul class="nav bg-secondary">
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/members">MEMBERS</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container mt-2">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            
+            <th>Total courses</th>
+            <td>{{total_courses_count}}</td>
+          </tr>
+          <tr>
+            <th>Total Trainers</th>
+            <td>{{total_trainers_count}}</td>
+          </tr>
+          <tr>
+            <th>Total Students</th>
+            <td>{{total_students_count}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>

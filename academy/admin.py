@@ -3,7 +3,7 @@ from .  import models
 # Register your models here.
 
 class CourceAdmin(admin.ModelAdmin):
-    list_display = ['course_name','description','duration']
+    list_display = ['course_name','description','duration_inWeeks']
 
 class TrainerAdmin(admin.ModelAdmin):
     list_display = ['first_name','last_name','email','Expertise']

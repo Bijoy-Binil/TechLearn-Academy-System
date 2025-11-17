@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course List Page</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
 </head>
 <body>
-    
+    <div class="container ">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Course name</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Course image</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in courses %}
+    <tr>
+      <th scope="row">{{data.course_name}}</th>
+      <td>{{data.duration_inWeeks}}</td>
+      <td><img width="100" style="border-radius: 20px;" src="{{data.course_image.url}}" alt="image"></td>
+
+      <td>{{data.description}}</td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+</table>
+</div>
 </body>
 </html>
