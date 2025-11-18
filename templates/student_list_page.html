@@ -3,20 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List Page </title>
-{% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
+    <title>Trainer List Page</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
 </head>
 <body>
-    div class="container">
-  <ul class="nav bg-info">
-    <li class="nav-item">
-      <a class="nav-link link-light" href="/">HOME</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link link-light" href="/members">MEMBERS</a>
-    </li>
-  </ul>
+      <div class="container">
+      <ul class="nav bg-secondary">
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/academy/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/academy/courses/">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/academy/trainers/">Trainers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/academy/students/">Students</a>
+        </li>
+      </ul>
+    </div>
+      <div class="container mt-3">
+              <h2 class="d-flex justify-content-center mb-3">Student List Page</h2>
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Full Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Enrolled Course Name </th>
+      <th scope="col">Trainer Name </th>
+      <th scope="col">Active or not </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in students %}
+    <tr>
+      <th scope="row">{{data.full_name}}</th>
+      <td>{{data.email}}</td>
+      <td>{{data.Enrolled_course}}</td>
+      <td>{{data.trainer}}</td>
+      <td>{{data.is_active}}</td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+</table>
+</div>
 </body>
 </html>

@@ -17,6 +17,10 @@ class Trainer(models.Model):
     trainer_image = models.ImageField(upload_to='trainer/%Y/%m/%d/')
     def __str__(self):
         return self.first_name
+    
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+    
 class Student(models.Model):
     first_name       = models.CharField(max_length=20)
     last_name        = models.CharField(max_length=20)
@@ -27,3 +31,6 @@ class Student(models.Model):
 
     def __str__(self):
         return self.first_name
+    
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
